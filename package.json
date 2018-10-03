@@ -1,0 +1,30 @@
+{
+  "name": "osbd_course-work",
+  "version": "1.0.0",
+  "description": "\"# OSBD_Course-work\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "cd client && npm install",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeka98/OSBD_Course-work.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeka98/OSBD_Course-work/issues"
+  },
+  "homepage": "https://github.com/Jeka98/OSBD_Course-work#readme",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.4"
+  }
+}

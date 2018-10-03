@@ -73,10 +73,10 @@ app.get('/getposts', (req, res) => {
     let sql = 'SELECT * FROM posts';
     let query = db.query(sql, (err, results) => {
         if(err) throw err;
+        console.log(results);
         return res.json({
             posts: results
         });
-        console.log(results);
         //res.send('Posts fetched...');
         
     });
@@ -116,20 +116,20 @@ app.get('/deletepost/:id', (req, res) => {
 
 const port = 5000;
 
-app.use(cors({
-    'allowedHeaders': ['sessionId', 'Content-Type'],
-    'exposedHeaders': ['sessionId'],
-    'origin': '*',
-    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    'preflightContinue': false
-  }));
+// app.use(cors({
+//     'allowedHeaders': ['sessionId', 'Content-Type'],
+//     'exposedHeaders': ['sessionId'],
+//     'origin': '*',
+//     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     'preflightContinue': false
+//   }));
 
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
 
 
 app.listen(port, () => {
